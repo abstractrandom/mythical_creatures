@@ -1,19 +1,18 @@
 class Pirate
 
-  attr_reader :name, :job
+  attr_reader :name, :job, :curse
 
   def initialize(name, job = "Scallywag")
     @name = name
     @job = job
-    @bad = 0
+    @curse = 0
   end
 
   def cursed?
-    @bad > 2 ? true : false
+    true if @curse >= 3
   end
 
   def commit_heinous_act
-    @bad += 1
+    @curse += 1
   end
-
 end

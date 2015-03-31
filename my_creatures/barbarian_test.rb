@@ -42,15 +42,15 @@ class BarbarianTest < Minitest::Test
   def test_when_it_throws_an_axes_it_loses_one
     barb = Barbarian.new("Grul", "green")
     assert_equal 2, barb.axes
-    barb.throw_axe
+    barb.throw_axe("air")
     assert_equal 1, barb.axes
   end
 
-  def test_when_it_cannot_throw_more_than_two_axes
+  def test_that_it_cannot_throw_more_than_two_axes
     barb = Barbarian.new("Grak", "yellow")
     assert_equal 2, barb.axes
-    barb.throw_axe
-    barb.throw_axe
+    barb.throw_axe("air")
+    barb.throw_axe("air")
     assert_equal 0, barb.axes
     assert_equal "Urk!", barb.throw_axe
   end
@@ -71,5 +71,13 @@ class BarbarianTest < Minitest::Test
     barb.throw_axe(monster)
     assert_equal 1, barb.axes
     assert_equal 50, monster.life
+  end
+
+  def test_monster_dies_when_hit_two_times_with_throw_axe
+    monster = Monster.new(100)
+    barb = Barbarian.new
+    2.times do barb.throw_axe(monster)
+    end
+    assert "The monster shudders, letting out a shrieking, guttural wail before falling dead."
   end
 end

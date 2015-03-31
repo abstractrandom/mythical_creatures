@@ -1,11 +1,15 @@
 class Hobbit
 
-attr_reader :name, :disposition, :age
+  attr_reader :name, :disposition, :age
 
-  def initialize(name, disposition = "homebody")
+  def initialize(name, mood = "homebody")
     @name = name
-    @disposition = disposition
+    @disposition = mood
     @age = 0
+  end
+
+  def age
+    @age
   end
 
   def celebrate_birthday
@@ -13,14 +17,6 @@ attr_reader :name, :disposition, :age
   end
 
   def adult?
-    @age > 32 ? true : false
-    # if @age > 32
-    #   true
-    # else
-    #   false
-    # end
+    @age >= 33 ? true : false
   end
-
-
-
 end

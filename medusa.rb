@@ -1,5 +1,4 @@
 class Medusa
-
   attr_reader :name, :statues
 
   def initialize(name)
@@ -9,41 +8,25 @@ class Medusa
 
   def stare(victim)
     @statues << victim
-    victim.stone
+    # victim.stone
   end
 end
 
-
 class Person
-
   attr_reader :name, :stoned
 
   def initialize(name)
     @name = name
-    @stoned = false
   end
 
   def stoned?
-    @stoned
+    @statues.include?()
   end
 
-  def stone
-    @stoned = true
-  end
+  # def stone
+  #   @stoned = true
+  # end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
