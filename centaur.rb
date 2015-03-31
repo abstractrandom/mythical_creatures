@@ -35,4 +35,12 @@ class Centaur
     @standing
   end
 
+  def sleep
+    "NO!"
+  end
+
+  def lay_down
+    
+  end
+
 end
